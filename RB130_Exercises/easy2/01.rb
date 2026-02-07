@@ -1,6 +1,8 @@
 
-# step(1, 10, 3) { |value| puts "value = #{value}" }
+step(1, 10, 3) { |value| puts "value = #{value}" }
 
-a = []
-('a'..'e').step { |ele| a.push(ele) }
-p a
+# Expected output
+# value = 1
+# value = 4
+# value = 7
+# value = 10
