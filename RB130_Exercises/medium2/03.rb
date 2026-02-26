@@ -21,4 +21,17 @@ class CashRegisterTest < Minitest::Test
 
     assert_equal(starting_amount + transaction_amount, current_cash_register)
   end
+
+  # This test ensures that we give the appropriate #change; the cash register
+  # has the item cost that is deducted from the amount paid
+  def test_change
+    paid_amount = @transaction.amount_paid = 20
+    cost_of_item = @transaction.item_cost
+    actual_change = @cash_register.change(@transaction)
+
+    # NB: the expectation should be more specific, ie not `paid_amount - cost_of_item`
+    # but the value, 20-1
+    # we could just put it into an `expected_change = paid_amount - cost_of_item`
+    assert_equal( 11 , actual_change)
+  end
 end

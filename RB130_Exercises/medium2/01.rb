@@ -5,6 +5,6 @@ Minitest::Reporters.use!
 require_relative "cash_register"
 require_relative 'transaction'
 
-class TestClass < Minitest::Test
+class CashRegisterTest < Minitest::Test
 
 end
